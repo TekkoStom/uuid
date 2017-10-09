@@ -50,6 +50,8 @@ func (uuid *UUID) Scan(src interface{}) error {
 
 			*uuid = u
 		}
+	case nil:
+		return nil
 
 	default:
 		return fmt.Errorf("Scan: unable to scan type %T into UUID", src)
